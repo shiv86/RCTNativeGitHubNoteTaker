@@ -1,0 +1,32 @@
+import React, { Component } from 'react-native';
+
+var {
+  View,
+  WebView,
+  StyleSheet
+} = React;
+
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F6F6EF',
+    flexDirection: 'column',
+  },
+});
+
+class WebViewHelper extends React.Component{
+  render() {
+    return (
+      <View style={styles.container}>
+        <WebView source={{uri: this.props.url}}  />
+      </View>
+    );
+  }
+};
+
+WebViewHelper.propTypes = {
+ url: React.PropTypes.string.isRequired
+};
+
+
+module.exports = WebViewHelper;
